@@ -1,28 +1,51 @@
-import { useState } from 'react'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import ProblemSection from "./components/ProblemSection";
+import PillarsSection from "./components/PillarsSection";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white">
+      <Navbar />
+      <main>
+        <Hero />
+        <ProblemSection />
+        <PillarsSection />
+
+        <section id="contact" className="py-16 sm:py-24 bg-gradient-to-br from-emerald-50 to-white dark:from-neutral-900 dark:to-neutral-950">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-8 bg-white/70 dark:bg-neutral-950/70 backdrop-blur">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-semibold tracking-tight">Intéressé pour co-construire la Smart Forestry ?</h3>
+                  <p className="mt-2 text-neutral-700 dark:text-neutral-300">
+                    Nous échangeons avec des exploitants, transporteurs, coopératives et investisseurs pour prioriser les premiers modules et cas d'usage.
+                  </p>
+                </div>
+                <div className="flex md:justify-end">
+                  <a
+                    href="mailto:contact@aristee.eu"
+                    className="inline-flex items-center justify-center rounded-md bg-emerald-600 text-white px-5 py-3 hover:bg-emerald-700 transition shadow-sm"
+                  >
+                    contact@aristee.eu
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="py-8 border-t border-neutral-200 dark:border-neutral-800 text-sm text-neutral-600 dark:text-neutral-400">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <p>© {new Date().getFullYear()} Aristée — Smart Forestry européenne</p>
+          <p>
+            Fabriqué avec sobriété numérique
+          </p>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
